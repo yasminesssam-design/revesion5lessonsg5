@@ -89,17 +89,17 @@ const L=[
 {t:"f",q:"1 جيجابايت = 1024 ميجابايت.",a:true},
 {t:"f",q:"البايت يساوي 8 بت.",a:true}
 ]},
-{title:"Lesson 2: Networks and Their Types",short:"الدرس الثاني",lang:"en",icon:"🌐",labs:["a","b","c","d"],qs:[
-{t:"m",q:"............ are groups of people or devices that are connected to each other.",o:["Computers","Information","Gateways","Networks"],a:3},
-{t:"m",q:"To connect your computer to the Internet, you need a ............ .",o:["network","gateway","flash memory","none of them"],a:1},
-{t:"m",q:"The ............ consists of a computer connected to another device such as a printer or router.",o:["LAN","Ethernet","WWW","Internet"],a:0},
-{t:"m",q:"A/An ............ is a device that connects your computer to an ISP.",o:["Bluetooth","router","Ethernet port","HDMI"],a:1},
-{t:"m",q:"............ is a company that provides the Internet service to customers.",o:["An ISP","A router","WWW","A gateway"],a:0},
-{t:"m",q:"The school computer lab network is a ............ .",o:["open network","closed network","WWW","Intranet"],a:1},
-{t:"f",q:"A LAN is a wide area network.",a:false},
-{t:"f",q:"The ISP is made up of web pages that people can navigate.",a:false},
-{t:"f",q:"WWW is a short form for the World Wide Web.",a:true},
-{t:"f",q:"A school's computer lab could have its own closed network.",a:true}
+{title:"الدرس الثاني: الشبكات وأنواعها",short:"الدرس الثاني",lang:"ar",icon:"🌐",labs:["أ","ب","ج","د"],qs:[
+{t:"m",q:"............ هي مجموعات من الأشخاص أو الأجهزة المرتبطة ببعضها.",o:["أجهزة الحاسب","المعلومات","البوابات (Gateways)","الشبكات"],a:3},
+{t:"m",q:"لتوصيل جهاز الحاسب بالإنترنت، تحتاج إلى ............ .",o:["شبكة","بوابة (Gateway)","ذاكرة فلاش","لا شيء مما سبق"],a:1},
+{t:"m",q:"تتكون ............ من جهاز حاسب متصل بجهاز آخر مثل الطابعة أو الراوتر.",o:["الشبكة المحلية (LAN)","الإيثرنت (Ethernet)","الشبكة العنكبوتية (WWW)","الإنترنت"],a:0},
+{t:"m",q:"............ جهاز يربط جهاز الحاسب الخاص بك بمزود خدمة الإنترنت (ISP).",o:["البلوتوث","الراوتر","منفذ الإيثرنت","كابل HDMI"],a:1},
+{t:"m",q:"............ هو شركة تقدم خدمة الإنترنت للعملاء.",o:["مزود خدمة الإنترنت (ISP)","الراوتر","الشبكة العنكبوتية (WWW)","البوابة"],a:0},
+{t:"m",q:"شبكة معمل الحاسب بالمدرسة هي ............ .",o:["شبكة مفتوحة","شبكة مغلقة","الشبكة العنكبوتية (WWW)","إنترانت"],a:1},
+{t:"f",q:"الشبكة المحلية (LAN) هي شبكة واسعة النطاق.",a:false},
+{t:"f",q:"مزود خدمة الإنترنت (ISP) يتكون من صفحات ويب يمكن للناس التنقل بينها.",a:false},
+{t:"f",q:"WWW اختصار للشبكة العنكبوتية العالمية (World Wide Web).",a:true},
+{t:"f",q:"يمكن أن يكون لمعمل الحاسب بالمدرسة شبكته المغلقة الخاصة.",a:true}
 ]},
 {title:"الدرس الثالث: أنظمة التواصل الذكية",short:"الدرس الثالث",lang:"ar",icon:"📱",labs:["أ","ب","ج","د"],qs:[
 {t:"m",q:"تستخدم البنوك شبكات ...... لمشاركة المعلومات الخاصة.",o:["مغلقة","التواصل الاجتماعي","مفتوحة","البرامج الرسمية"],a:0},
@@ -194,7 +194,7 @@ sndClick();show();
 }
 
 function show(){
-const q=S.qs[S.i],l=L[q.li],en=l.lang==="en",dir=en?"ltr":"rtl";
+const q=S.qs[S.i],l=L[q.li],en=false,dir="rtl";
 const inLesson=S.qs.filter(x=>x.li===q.li);const n=inLesson.indexOf(q)+1;
 let opts="";
 if(q.t==="m"){
@@ -215,7 +215,7 @@ window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function ans(v){
-const q=S.qs[S.i],l=L[q.li],en=l.lang==="en";
+const q=S.qs[S.i],l=L[q.li],en=false;
 const ok=(q.t==="m")?(v===q.a):(v===q.a);
 const btns=[...document.querySelectorAll("#opts .opt")];
 btns.forEach(b=>b.disabled=true);
